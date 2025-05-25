@@ -51,8 +51,7 @@ export default function ProfileBody() {
             y: [0, -10, 0],
           }}
           transition={{
-            duration: 5,
-
+            duration: 6,
             repeat: Infinity,
             ease: "easeInOut",
           }}

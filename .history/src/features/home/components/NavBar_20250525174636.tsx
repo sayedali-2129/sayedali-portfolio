@@ -11,18 +11,41 @@ import { useEffect, useState } from "react";
 export default function NavBar() {
   const [showMenu, setShowMenu] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
   const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
   }, []);
 
   const openMenu = () => {
     setShowMenu(!showMenu);
   };
 
-  const navBarItemClass =
-    "text-TextColor sm:font-RalewayRegular sm:text-lg text-[16px] font-RalewaySemiBold tracking-wide hover:cursor-pointer hover:text-TextBlue";
+  const navBarItemClass = (sectionId: string) =>
+    `${
+      activeSection === sectionId
+        ? "text-TextBlue underline underline-offset-8"
+        : "text-TextColor"
+    } sm:font-RalewayRegular sm:text-lg text-[16px] font-RalewaySemiBold tracking-wide hover:cursor-pointer hover:text-TextBlue`;
 
   return (
     <div className="z-50 md:h-24 h-20 w-full bg-BackGroundColor fixed xl:px-52 md:px-32 sm:px-16 px-4 flex flex-row items-center justify-between">
@@ -50,24 +73,27 @@ export default function NavBar() {
         <li>
           <Link
             href="/"
-            className={`${
-              pathname === "/"
-                ? "text-TextBlue underline underline-offset-8"
-                : "text-TextColor"
-            } sm:font-RalewayRegular sm:text-lg text-[16px] font-RalewaySemiBold tracking-wide hover:cursor-pointer hover:text-TextBlue`}
+            className={navBarItemClass("home")}
+            onClick={() => setActiveSection("home")}
           >
             Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/#projects"
+            className={navBarItemClass("projects")}
+            onClick={() => setActiveSection("projects")}
+          >
+            Projects
           </Link>
         </li>
 
         <li>
           <Link
             href="/about"
-            className={`${
-              pathname === "/about"
-                ? "text-TextBlue underline underline-offset-8"
-                : "text-TextColor"
-            } sm:font-RalewayRegular sm:text-lg text-[16px] font-RalewaySemiBold tracking-wide hover:cursor-pointer hover:text-TextBlue`}
+            className={navBarItemClass("about")}
+            onClick={() => setActiveSection("about")}
           >
             About
           </Link>
@@ -78,7 +104,7 @@ export default function NavBar() {
             href="mailto:sayedalimh@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            className={navBarItemClass}
+            className="text-TextColor sm:font-RalewayRegular sm:text-lg text-[16px] font-RalewaySemiBold tracking-wide hover:cursor-pointer hover:text-TextBlue"
           >
             Contact
           </a>
@@ -113,18 +139,32 @@ export default function NavBar() {
                 className="h-6 w-6 hover:cursor-pointer"
               />
             </div>
-            <Link href="/" className={navBarItemClass}>
+            <Link
+              href="/"
+              className={navBarItemClass("home")}
+              onClick={() => setActiveSection("home")}
+            >
               Home
             </Link>
-
-            <Link href="/about" className={navBarItemClass}>
+            <Link
+              href="/#projects"
+              className={navBarItemClass("projects")}
+              onClick={() => setActiveSection("projects")}
+            >
+              Projects
+            </Link>
+            <Link
+              href="/about"
+              className={navBarItemClass("about")}
+              onClick={() => setActiveSection("about")}
+            >
               About
             </Link>
             <a
               href="mailto:sayedalimh@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={navBarItemClass}
+              className="text-TextColor sm:font-RalewayRegular sm:text-lg text-[16px] font-RalewaySemiBold tracking-wide hover:cursor-pointer hover:text-TextBlue"
             >
               Contact
             </a>

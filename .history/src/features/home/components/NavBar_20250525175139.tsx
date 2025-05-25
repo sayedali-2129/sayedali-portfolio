@@ -59,8 +59,7 @@ export default function NavBar() {
             Home
           </Link>
         </li>
-
-        <li>
+       
           <Link
             href="/about"
             className={`${
@@ -116,7 +115,9 @@ export default function NavBar() {
             <Link href="/" className={navBarItemClass}>
               Home
             </Link>
-
+            <Link href="/#projects" className={navBarItemClass}>
+              Projects
+            </Link>
             <Link href="/about" className={navBarItemClass}>
               About
             </Link>

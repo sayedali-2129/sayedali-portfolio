@@ -36,7 +36,7 @@ export default function ProfileBody() {
           {/* <h3 className="text-[36px] text-TextColor font-RalewaySemiBold">
             Based On India
           </h3> */}
-          <p className="text-TextColor font-RalewayRegular pb-20 md:pb-0">
+          <p className="text-TextColor font-RalewayRegular pb-10 md:pb-0">
             Passionate Flutter Developer skilled in building high-performance,
             scalable apps with clean Dart code and strong UI/UX design.
             Experienced in Firebase and Web3 integration to deliver seamless

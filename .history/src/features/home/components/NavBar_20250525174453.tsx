@@ -51,12 +51,24 @@ export default function NavBar() {
           <Link
             href="/"
             className={`${
-              pathname === "/"
+              pathname === "/" && !window.location.hash
                 ? "text-TextBlue underline underline-offset-8"
                 : "text-TextColor"
             } sm:font-RalewayRegular sm:text-lg text-[16px] font-RalewaySemiBold tracking-wide hover:cursor-pointer hover:text-TextBlue`}
           >
             Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/#projects"
+            className={`${
+              pathname === "/" && window.location.hash === "#projects"
+                ? "text-TextBlue underline underline-offset-8"
+                : "text-TextColor"
+            } sm:font-RalewayRegular sm:text-lg text-[16px] font-RalewaySemiBold tracking-wide hover:cursor-pointer hover:text-TextBlue`}
+          >
+            Projects
           </Link>
         </li>
 
@@ -116,7 +128,9 @@ export default function NavBar() {
             <Link href="/" className={navBarItemClass}>
               Home
             </Link>
-
+            <Link href="/#projects" className={navBarItemClass}>
+              Projects
+            </Link>
             <Link href="/about" className={navBarItemClass}>
               About
             </Link>

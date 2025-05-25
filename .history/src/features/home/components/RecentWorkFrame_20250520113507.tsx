@@ -34,7 +34,6 @@ export default function RecentWorkFrame({
       initial={{ opacity: 0, x: 100 }}
       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      whileHover={{ y: -10, transition: { duration: 0.2 } }}
       className="md:w-full w-full py-8 flex flex-col gap-4 pl-4 pr-2 rounded-xl"
       style={{ backgroundColor: color }}
     >

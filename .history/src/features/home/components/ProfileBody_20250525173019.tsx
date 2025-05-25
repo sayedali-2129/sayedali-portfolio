@@ -46,22 +46,25 @@ export default function ProfileBody() {
           </p>
         </div>
         <motion.div
-          className="md:w-1/2 order-1 md:order-2 md:h-[530px] h-72 pb-16 md:pb-0 pt-6 justify-center items-center"
+          className="md:w-1/2 order-1 md:order-2 md:h-[530px] h-72 pb-16 md:pb-0 pt-6 justify-center items-center relative"
           animate={{
-            y: [0, -10, 0],
+            y: [0, -20, 0],
           }}
           transition={{
-            duration: 5,
-
+            duration: 6,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         >
-          <Image
-            src={FlutterImg}
-            alt="Flutter Developer"
-            className="h-full w-full object-contain"
-          />
+          <div className="absolute inset-0 border-4 border-primary rounded-2xl transform rotate-3"></div>
+          <div className="absolute inset-0 border-4 border-secondary rounded-2xl transform -rotate-3"></div>
+          <div className="relative z-10 h-full w-full p-4">
+            <Image
+              src={FlutterImg}
+              alt="Flutter Developer"
+              className="h-full w-full object-contain"
+            />
+          </div>
         </motion.div>
       </div>
 

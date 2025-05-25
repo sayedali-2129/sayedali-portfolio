@@ -3,7 +3,6 @@
 import appstore from "@/assets/icons/appstore.png";
 import playstore from "@/assets/icons/playstore.png";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 import { useRef } from "react";
 
 interface RecentWorkFrameProps {
@@ -34,18 +33,11 @@ export default function RecentWorkFrame({
       initial={{ opacity: 0, x: 100 }}
       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      whileHover={{ y: -10, transition: { duration: 0.2 } }}
       className="md:w-full w-full py-8 flex flex-col gap-4 pl-4 pr-2 rounded-xl"
       style={{ backgroundColor: color }}
     >
       <div className="flex flex-row items-start">
-        <Image
-          src={image}
-          alt={title}
-          width={56}
-          height={56}
-          className="md:h-14 h-12 rounded-xl object-contain"
-        />
+        <img src={image} alt={title} className="md:h-14 h-12 rounded-xl" />
         <ul className="flex flex-col justify-center px-4">
           <li>
             <h4 className="font-RalewaySemiBold md:text-[24px] text-[16px] text-TextColor">
@@ -67,21 +59,17 @@ export default function RecentWorkFrame({
       </div>
       <div className="flex flex-row gap-4">
         <a href={playstoreLink} target="_blank" rel="noopener noreferrer">
-          <Image
-            src={playstore}
+          <img
+            src={playstore.src}
             alt="playstore"
-            width={20}
-            height={20}
             className="md:w-5 md:h-5 w-4 h-4"
           />
         </a>
         {appstoreLink !== undefined && (
           <a href={appstoreLink} target="_blank" rel="noopener noreferrer">
-            <Image
-              src={appstore}
+            <img
+              src={appstore.src}
               alt="appstore"
-              width={20}
-              height={20}
               className="md:w-5 md:h-5 w-4 h-4"
             />
           </a>

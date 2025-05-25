@@ -48,11 +48,10 @@ export default function ProfileBody() {
         <motion.div
           className="md:w-1/2 order-1 md:order-2 md:h-[530px] h-72 pb-16 md:pb-0 pt-6 justify-center items-center"
           animate={{
-            y: [0, -10, 0],
+            y: [0, -20, 0],
           }}
           transition={{
-            duration: 5,
-
+            duration: 6,
             repeat: Infinity,
             ease: "easeInOut",
           }}

@@ -116,7 +116,9 @@ export default function NavBar() {
             <Link href="/" className={navBarItemClass}>
               Home
             </Link>
-
+            <Link href="/#projects" className={navBarItemClass}>
+              Projects
+            </Link>
             <Link href="/about" className={navBarItemClass}>
               About
             </Link>

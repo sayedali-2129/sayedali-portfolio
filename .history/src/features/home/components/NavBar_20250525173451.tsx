@@ -56,7 +56,7 @@ export default function NavBar() {
                 : "text-TextColor"
             } sm:font-RalewayRegular sm:text-lg text-[16px] font-RalewaySemiBold tracking-wide hover:cursor-pointer hover:text-TextBlue`}
           >
-            Home
+            Work
           </Link>
         </li>
 
@@ -116,7 +116,9 @@ export default function NavBar() {
             <Link href="/" className={navBarItemClass}>
               Home
             </Link>
-
+            <Link href="/" className={navBarItemClass}>
+              Projects
+            </Link>
             <Link href="/about" className={navBarItemClass}>
               About
             </Link>

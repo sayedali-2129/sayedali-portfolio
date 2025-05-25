@@ -8,10 +8,37 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+const useIsInView = (id: string) => {
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+
+    const element = document.getElementById(id);
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, [id]);
+
+  return isInView;
+};
+
 export default function NavBar() {
   const [showMenu, setShowMenu] = useState(false);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+  const isProjectsInView = useIsInView("projects");
 
   useEffect(() => {
     setMounted(true);
@@ -57,6 +84,18 @@ export default function NavBar() {
             } sm:font-RalewayRegular sm:text-lg text-[16px] font-RalewaySemiBold tracking-wide hover:cursor-pointer hover:text-TextBlue`}
           >
             Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/#projects"
+            className={`${
+              pathname === "/#projects" || isProjectsInView
+                ? "text-TextBlue underline underline-offset-8"
+                : "text-TextColor"
+            } sm:font-RalewayRegular sm:text-lg text-[16px] font-RalewaySemiBold tracking-wide hover:cursor-pointer hover:text-TextBlue`}
+          >
+            Projects
           </Link>
         </li>
 
@@ -116,7 +155,9 @@ export default function NavBar() {
             <Link href="/" className={navBarItemClass}>
               Home
             </Link>
-
+            <Link href="/#projects" className={navBarItemClass}>
+              Projects
+            </Link>
             <Link href="/about" className={navBarItemClass}>
               About
             </Link>
