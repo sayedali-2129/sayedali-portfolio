@@ -74,14 +74,16 @@ export default function NavBar() {
         </li>
 
         <li>
-          <a
-            href="mailto:sayedalimh@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={navBarItemClass}
+          <Link
+            href="/contact"
+            className={`${
+              pathname === "/contact"
+                ? "text-TextBlue underline underline-offset-8"
+                : "text-TextColor"
+            } sm:font-RalewayRegular sm:text-lg text-[16px] font-RalewaySemiBold tracking-wide hover:cursor-pointer hover:text-TextBlue`}
           >
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
       <Image
@@ -120,14 +122,9 @@ export default function NavBar() {
             <Link href="/about" className={navBarItemClass}>
               About
             </Link>
-            <a
-              href="mailto:sayedalimh@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={navBarItemClass}
-            >
+            <Link href="/contact" className={navBarItemClass}>
               Contact
-            </a>
+            </Link>
           </div>
         </>
       )}
