@@ -3,10 +3,12 @@
 import FlutterImg from "@/assets/images/flutter-bird.png";
 import ScrollDownLottie from "@/assets/lottie/scroll-down.json";
 import { motion } from "framer-motion";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import RotatingText from "./RotatingText";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 export default function ProfileBody() {
   const [mounted, setMounted] = useState(false);

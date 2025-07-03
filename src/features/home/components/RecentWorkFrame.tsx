@@ -4,7 +4,7 @@ import appstore from "@/assets/icons/appstore.png";
 import playstore from "@/assets/icons/playstore.png";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface RecentWorkFrameProps {
   title: string;
@@ -26,13 +26,20 @@ export default function RecentWorkFrame({
   collabWith,
 }: RecentWorkFrameProps) {
   const ref = useRef(null);
+  const [mounted, setMounted] = useState(false);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, x: 100 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+      animate={
+        mounted && isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }
+      }
       transition={{ duration: 0.5, ease: "easeOut" }}
       whileHover={{ y: -10, transition: { duration: 0.2 } }}
       className="md:w-full w-full py-8 flex flex-col gap-4 pl-4 pr-2 rounded-xl"
