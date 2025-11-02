@@ -20,7 +20,13 @@ export default function ProfileBody() {
   return (
     <>
       <div className="md:mt-32 mt-24 xl:px-52 md:px-20 sm:px-12 px-2 flex flex-wrap items-center justify-center">
-        <div className="md:w-1/2 w-full order-2 md:order-1 md:h-[530px] h-80 flex flex-col justify-center">
+        <motion.div
+          className="md:w-1/2 w-full order-2 md:order-1 md:h-[530px] h-80 flex flex-col justify-center"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h2 className="xl:text-[36px] md:text-[30px] text-[26px] text-TextColor font-RalewaySemiBold">
             Hey There,
           </h2>
@@ -46,7 +52,7 @@ export default function ProfileBody() {
             collaborative teams, eager to drive innovation in mobile and
             blockchain development.
           </p>
-        </div>
+        </motion.div>
         <motion.div
           className="md:w-1/2 order-1 md:order-2 md:h-[530px] h-72 pb-16 md:pb-0 pt-6 justify-center items-center"
           animate={{
