@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 export default function Experience() {
   return (
     <motion.div
-      className="pb-20 xl:px-52 md:px-20 sm:px-12 px-2 flex flex-wrap items-start justify-start gap-8"
+      className="pb-20 xl:px-52 md:px-20 sm:px-12 px-2 flex flex-wrap items-start justify-center md:justify-start gap-8"
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="md:w-[330px] flex flex-col items-center justify-center">
-        <h3 className="mb-4 font-PoppinsSemiBold tracking-wide text-[24px] text-TextColor">
+      <div className="w-full mx-auto md:mx-0 md:w-[330px] flex flex-col items-center justify-center">
+        <h3 className="mb-4 text-center font-PoppinsSemiBold tracking-wide text-[24px] text-TextColor">
           Experience
         </h3>
         <p className="sm:mt-0 mt-4 sm:px-0 px-4 font-PoppinsRegular tracking-[2px] text-[13px] text-center text-TextColor text-opacity-50 leading-6">

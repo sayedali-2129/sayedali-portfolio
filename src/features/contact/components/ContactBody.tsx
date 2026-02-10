@@ -4,6 +4,7 @@ import facebook from "@/assets/icons/Facebook.png";
 import instagram from "@/assets/icons/Instagram.png";
 import linkedin from "@/assets/icons/Linkedin.png";
 import twitter from "@/assets/icons/Twitter.png";
+import github from "@/assets/icons/github.png";
 import Image from "next/image";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
@@ -51,30 +52,44 @@ function ContactBody() {
           For any service and work you can contact with me by send an email or
           by our social media accounts.
         </p>
-        <div className="flex flex-row gap-4 ">
+        <div className="flex flex-row gap-4">
+        <a
+            href="https://github.com/sayedali-2129"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="inline-flex items-center justify-center md:h-10 md:w-10 h-9 w-9 cursor-pointer">
+              <Image
+                src={github}
+                alt="github"
+                className="md:h-7 md:w-7 h-6 w-6 object-contain"
+              />
+            </span>
+          </a>
           <a
             href="https://www.linkedin.com/in/sayed-ali-mh"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="text-TextBlue text-5xl cursor-pointer">
+            <span className="inline-flex items-center justify-center md:h-10 md:w-10 h-9 w-9 cursor-pointer">
               <Image
                 src={linkedin}
                 alt="linkedin"
-                className="md:h-8 md:w-8 h-6 w-6"
+                className="md:h-8 md:w-8 h-7 w-7 object-contain"
               />
             </span>
           </a>
+         
           <a
             href="https://www.instagram.com/_sayed.ali___?igsh=MXN4dXhtZmJ5ang0Nw=="
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="text-TextBlue text-5xl cursor-pointer">
+            <span className="inline-flex items-center justify-center md:h-10 md:w-10 h-9 w-9 cursor-pointer">
               <Image
                 src={instagram}
                 alt="instagram"
-                className="md:h-8 md:w-8 h-6 w-6"
+                className="md:h-9 md:w-9 h-7 w-7 object-contain"
               />
             </span>
           </a>
@@ -83,25 +98,25 @@ function ContactBody() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="text-TextBlue text-5xl cursor-pointer">
+            <span className="inline-flex items-center justify-center md:h-10 md:w-10 h-9 w-9 cursor-pointer">
               <Image
                 src={facebook}
                 alt="facebook"
-                className="md:h-8 md:w-8 h-6 w-6"
+                className="md:h-10 md:w-10 h-9 w-9 object-contain"
               />
             </span>
           </a>
 
           <a
-            href=" https://x.com/sayedpld?t=IDqNHq5sS5bcq8l2TbZfow&s=08 "
+            href="https://x.com/sayedpld?t=IDqNHq5sS5bcq8l2TbZfow&s=08"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="text-TextBlue text-5xl cursor-pointer">
+            <span className="inline-flex items-center justify-center md:h-10 md:w-10 h-9 w-9 cursor-pointer">
               <Image
                 src={twitter}
                 alt="twitter"
-                className="md:h-8 md:w-8 h-6 w-6"
+                className="md:h-7 md:w-7 h-6 w-6 object-contain"
               />
             </span>
           </a>

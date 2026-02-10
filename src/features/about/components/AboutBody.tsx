@@ -24,20 +24,22 @@ export default function AboutBody() {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6 }}
       >
-        <Image
-          src={SayedAli}
-          className="md:w-[232px] w-[200px] md:h-[318px] h-[270px] rounded-xl shadow-[0_0_40px_-12px_rgba(34,211,238,0.35)]"
-          alt="Sayed Ali Flutter Developer image"
-        />
-        <div className="mt-6 w-40 h-10  px-[10px] py-[10px] border border-TextBlue relative rounded-md">
-          <a
-            href="https://drive.google.com/file/d/1e-ztRNtqxvGzUoTeu91yDBpbsFzEnL7z/view"
-            download="Sayed Ali MH CV.pdf"
-            className="absolute w-40 border border-TextBlue bg-transparent hover:bg-white/5 transition-colors flex items-center cursor-pointer justify-center px-5 py-3 text-[14px] text-TextBlue tracking-wide font-PoppinsMedium rounded-md"
-          >
-            View Resume
-          </a>
+        <div className="md:w-[232px] w-[200px] md:h-[318px] h-[270px] rounded-xl p-[2px] bg-TextBlue/70 shadow-[0_0_22px_rgba(34,211,238,0.45),0_0_50px_rgba(34,211,238,0.22)]">
+          <div className="w-full h-full rounded-[10px] overflow-hidden bg-black">
+            <Image
+              src={SayedAli}
+              className="w-full h-full object-cover"
+              alt="Sayed Ali Flutter Developer image"
+            />
+          </div>
         </div>
+        <a
+          href="https://drive.google.com/file/d/1RZEtvXqp5InLEl7slGU7ve9E9FTDZwtA/view"
+          download="Sayed Ali MH CV.pdf"
+          className="mt-6 inline-flex h-10 w-40 items-center justify-center rounded-md border border-TextBlue/60 bg-white/5 px-5 text-[14px] font-PoppinsMedium tracking-wide text-TextBlue shadow-[0_0_0_1px_rgba(34,211,238,0.12),0_0_16px_rgba(34,211,238,0.12)] transition-all hover:bg-TextBlue/10 hover:shadow-[0_0_0_1px_rgba(34,211,238,0.18),0_0_22px_rgba(34,211,238,0.22)] focus:outline-none focus-visible:ring-2 focus-visible:ring-TextBlue/60"
+        >
+          View CV
+        </a>
 
         <h3 className="mt-12 font-PoppinsSemiBold tracking-wide text-xl">
           Tools
