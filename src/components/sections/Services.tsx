@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import { SectionHeader } from "../SectionHeader";
 import { SERVICES } from "../../data/portfolio";
