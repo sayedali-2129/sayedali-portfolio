@@ -1,0 +1,8 @@
+{
+  "name": "Lumina Flutter Portfolio",
+  "description": "A high-end, ethereal portfolio for a Senior Flutter Developer featuring glassmorphic UI and technical precision.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
